@@ -32,9 +32,15 @@ public class Node {
 
     public List<String> names() {
         List<String> list = new ArrayList<>();
-        if (left != null) list.addAll(left.names());
-        if (name != null) list.add(name);
-        if (right != null) list.addAll(right.names());
+        if (left != null) {
+            list.addAll(left.names());
+        }
+        if (name != null) {
+            list.add(name);
+        }
+        if (right != null) {
+            list.addAll(right.names());
+        }
         return list;
     }
 }
