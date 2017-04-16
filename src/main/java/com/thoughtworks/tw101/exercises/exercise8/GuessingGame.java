@@ -14,6 +14,7 @@ public class GuessingGame {
     Random randomNumber = new Random();
     int n = randomNumber.nextInt(100) + 1;
     int guess;
+    boolean activeGame = true;
 
     public void beginGame() {
         promptUserForGuess();
@@ -25,7 +26,7 @@ public class GuessingGame {
     }
 
     private void checkForValidInput(String line) {
-        while (true) {
+        while (activeGame) {
             try {
                 guess = Integer.parseInt(line);
             }
@@ -63,7 +64,7 @@ public class GuessingGame {
                 System.out.print(userGuess + " ");
             }
         }
-        System.exit(1);
+        activeGame = false;
     }
 }
 
